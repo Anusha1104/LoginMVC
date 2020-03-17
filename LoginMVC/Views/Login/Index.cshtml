@@ -1,0 +1,33 @@
+﻿@model LoginMVC.Models.Login
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Login Page</h2>
+
+@using(Html.BeginForm("Check","Login"))
+{
+<table>
+    <tr>
+        <td>Username:</td>
+        <td>@Html.TextBoxFor(a => a.username)</td>
+        <td>@Html.ValidationMessageFor(a=>a.username,"")</td>
+    </tr>
+    <tr>
+        <td>Password:</td>
+        <td>@Html.TextBoxFor(a => a.password)</td>
+        <td>@Html.ValidationMessageFor(a => a.password,"")</td>
+    </tr>
+    <tr>
+        <td><input type="submit"/></td>
+    </tr>
+</table>
+
+    if(ViewBag.msg!=null)
+    {
+        <h2>@ViewBag.msg</h2>
+    }
+}
+
+
+
